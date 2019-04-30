@@ -1,0 +1,9 @@
+<div class="loader" *ngIf="hotels.length === 0">
+  <span class="fa fa-compass fa-spin"></span>
+  <br>
+  Loading available hotels...
+</div>
+
+<div class="bg" *ngIf="hotels.length > 0">
+  <app-hotel *ngFor="let hotel of hotels" [hotel]="hotel"></app-hotel>
+</div>

@@ -1,0 +1,105 @@
+$red: #fb4d45;
+$border-radius: 3px;
+
+.hotel-item {
+  display: grid;
+  grid-template-columns: 200px 1fr 130px;
+  height: 200px;
+  margin-top: 10px;
+
+  .img {
+    background-color: #fff;
+    border-radius: $border-radius 0 0 $border-radius;
+    background-size: cover;
+    background-position: center;
+
+    .sale {
+      background-color: $red;
+      color: white;
+      display: inline-block;
+      padding: 4px;
+      margin: 10px;
+      font-size: .6rem;
+      font-weight: 700;
+      padding-bottom: 3px;
+      border: 1px solid #bf1616;
+      border-radius: $border-radius;
+    }
+  }
+
+  .main {
+    background-color: #fff;
+    padding: 15px;
+
+    h3 {
+      margin: 0;
+      font-size: 1.4rem;
+    }
+
+    .stars {
+      .star {
+        color: #ffc790;
+      }
+    }
+
+    p {
+      margin-top: 5px;
+      color: #666;
+    }
+  }
+
+  .order {
+    background-color: #f1efef;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    font-size: 1.2rem;
+    border-radius: 0 $border-radius $border-radius 0;
+
+    .price {
+      flex: 1;
+      display: flex;
+      align-items: center;
+
+      .v-centered {
+        width: 100%;
+
+        .old-price {
+          color: $red;
+          text-decoration: line-through;
+          font-size: .6em;
+        }
+
+        .new-price {
+          font-weight: 700;
+        }
+      }
+    }
+
+    .button {
+      // flex: 1;
+      flex-basis: 40px;
+
+      button {
+        width: 90%;
+        background-color: #00ad8d;
+        border-radius: $border-radius;
+        color: white;
+        border: none;
+        font-weight: 900;
+        padding: 10px;
+        font-size: 0.8rem;
+        cursor: pointer;
+        transition: opacity .2s;
+
+        &:hover {
+          opacity: .8;
+        }
+
+        &:active {
+          opacity: 1;
+        }
+      }
+    }
+  }
+}

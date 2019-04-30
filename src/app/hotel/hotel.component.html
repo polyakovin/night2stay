@@ -1,0 +1,37 @@
+<div class="hotel-item">
+  <div class="img" [ngStyle]="{'background-image': 'url(' + hotel.img + ')'}">
+    <div class="sale" *ngIf="hotel.paymentOld">Сэкономьте {{ hotel.discount() }}%</div>
+  </div>
+
+  <div class="main">
+    <h3>{{ hotel.name }}</h3>
+
+    <div class="stars">
+      <span class="star fa fa-star" *ngFor="let star of hotel.stars()"></span>
+    </div>
+
+    <p>
+      Address
+      <!-- Расположение -->
+      <br>
+      <small>
+        {{ hotel.address }}
+      </small>
+    </p>
+  </div>
+
+  <div class="order">
+    <div class="price">
+      <div class="v-centered">
+        <span class="old-price" *ngIf="hotel.paymentOld">{{ hotel.paymentOld | rubles }} {{ hotel.currency }}</span><br>
+        <span class="new-price">{{ hotel.payment | rubles }} {{ hotel.currency }}</span>
+      </div>
+    </div>
+    <div class="button">
+      <button>
+        View
+        <!-- Посмотреть -->
+      </button>
+    </div>
+  </div>
+</div>
